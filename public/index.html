@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestión de elementos</title>
+    <link rel="stylesheet" href="./css/styles.css">
+    <script src="./js/main.js" defer></script>
+</head>
+<body>
+    <main class="container">
+        <h1>Gestión de elementos</h1>
+
+        <section class="editor-panel" aria-labelledby="formTitle">
+            <h2 id="formTitle">Agregar elemento</h2>
+            <form id="itemForm" class="item-form">
+                <div class="field">
+                    <label for="name">Nombre</label>
+                    <input id="name" name="name" type="text" maxlength="80" placeholder="Nombre del elemento" required>
+                </div>
+                <div class="field">
+                    <label for="description">Descripción</label>
+                    <input id="description" name="description" type="text" maxlength="240" placeholder="Descripción" >
+                </div>
+                <div class="form-actions">
+                    <button class="button button-primary" id="submitBtn" type="submit">Agregar</button>
+                    <button class="button button-quiet" id="cancelBtn" type="button" hidden>Cancelar</button>
+                </div>
+            </form>
+        </section>
+
+        <p class="status" id="listStatus" aria-live="polite"></p>
+
+        <section aria-labelledby="listTitle">
+            <h2 id="listTitle">Elementos</h2>
+            <div class="table-wrap">
+                <table>
+                    <thead>
+                        <tr>
+                            <th scope="col">ID</th>
+                            <th scope="col">Nombre</th>
+                            <th scope="col">Descripción</th>
+                            <th scope="col"><span class="sr-only">Acciones</span></th>
+                        </tr>
+                    </thead>
+                    <tbody id="itemsTable"></tbody>
+                </table>
+                <p class="empty-state" id="emptyState" hidden>No hay elementos registrados.</p>
+            </div>
+        </section>
+    </main>
+</body>
+</html>
