@@ -5,7 +5,11 @@
   --muted: #aebac1;
   --blue: #8bb3c4;
 }
-
+.Conteinter-Reviews{
+   display: flex; 
+    gap: 15px;    
+    align-items: center;
+}
 * {
   box-sizing: border-box;
 }
