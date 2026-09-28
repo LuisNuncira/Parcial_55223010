@@ -1,25 +1,17 @@
 const http = require("http");
 const fs = require("fs/promises");
 const path = require("path");
-const handleItemsRoutes = require("./src/routes/item");
 
 const PORT = 3001;
 const PUBLIC_PATH = path.join(__dirname, "public");
 
 const MIME_TYPES = {
     ".html": "text/html; charset=utf-8",
-    ".css": "text/css; charset=utf-8",
-    ".js": "text/javascript; charset=utf-8",
-    ".json": "application/json; charset=utf-8",
-    ".png": "image/png",
-    ".jpeg": "image/jpeg",
-    ".gif": "image/gif"
+    ".css": "text/css; charset=utf-8"
 };
 
 const server = http.createServer(async (req, res) => {
     console.log(`${new Date().toISOString()} - ${req.method} ${req.url}`);
-
-    if (handleItemsRoutes(req, res)) return;
 
     try {
         const parsedUrl = new URL(req.url, `http://${req.headers.host}`);

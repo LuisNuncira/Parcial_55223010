@@ -1,53 +1,77 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gestión de elementos</title>
-    <link rel="stylesheet" href="./css/styles.css">
-    <script src="./js/main.js" defer></script>
-</head>
-<body>
-    <main class="container">
-        <h1>Gestión de elementos</h1>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hollow Knight</title>
+    <meta
+      name="description"
+      content="Explora Hallownest en Hollow Knight, una aventura de acción y exploración."
+    />
+    <link rel="stylesheet" href="./css/styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container nav-bar">
+        <div class="brand" aria-label="Hollow Knight">
+          <span class="brand-mark" aria-hidden="true">H</span>
+          <span>Hollow Knight</span>
+        </div>
 
-        <section class="editor-panel" aria-labelledby="formTitle">
-            <h2 id="formTitle">Agregar elemento</h2>
-            <form id="itemForm" class="item-form">
-                <div class="field">
-                    <label for="name">Nombre</label>
-                    <input id="name" name="name" type="text" maxlength="80" placeholder="Nombre del elemento" required>
-                </div>
-                <div class="field">
-                    <label for="description">Descripción</label>
-                    <input id="description" name="description" type="text" maxlength="240" placeholder="Descripción" >
-                </div>
-                <div class="form-actions">
-                    <button class="button button-primary" id="submitBtn" type="submit">Agregar</button>
-                    <button class="button button-quiet" id="cancelBtn" type="button" hidden>Cancelar</button>
-                </div>
-            </form>
-        </section>
+        <nav class="main-nav" aria-label="Navegación principal">
+          <a href="#inicio">Inicio</a>
+          <a href="#juego">El juego</a>
+          <a href="#noticias">Novedades</a>
+        </nav>
 
-        <p class="status" id="listStatus" aria-live="polite"></p>
+      </div>
+    </header>
 
-        <section aria-labelledby="listTitle">
-            <h2 id="listTitle">Elementos</h2>
-            <div class="table-wrap">
-                <table>
-                    <thead>
-                        <tr>
-                            <th scope="col">ID</th>
-                            <th scope="col">Nombre</th>
-                            <th scope="col">Descripción</th>
-                            <th scope="col"><span class="sr-only">Acciones</span></th>
-                        </tr>
-                    </thead>
-                    <tbody id="itemsTable"></tbody>
-                </table>
-                <p class="empty-state" id="emptyState" hidden>No hay elementos registrados.</p>
-            </div>
-        </section>
+    <main>
+      <section class="hero" id="inicio" aria-label="Hollow Knight">
+        <img
+          class="hero-image"
+          src="https://cdn.akamai.steamstatic.com/steam/apps/367520/header.jpg"
+          alt="Arte de Hollow Knight"
+        />
+        <div class="hero-copy container">
+          <p class="eyebrow">Bienvenido a Hallownest</p>
+          <h1>Adéntrate en la oscuridad.</h1>
+          <p class="lead">Explora un reino olvidado y descubre sus secretos.</p>
+          <a class="btn btn-primary" href="#juego">Jugar</a>
+        </div>
+      </section>
+
+      <section class="game-section container" id="juego">
+        <h2>Un reino bajo la lluvia</h2>
+        <p>
+          Recorre cavernas antiguas, enfréntate a criaturas extrañas y encuentra tu
+          propio camino por el mundo subterráneo de Hallownest.
+        </p>
+      </section>
+
+      <section class="subscribe container" id="noticias">
+        <h2>Recibe noticias del reino</h2>
+        <form class="subscribe-form" aria-label="Formulario de suscripción">
+          <label class="sr-only" for="name">Nombre</label>
+          <input id="name" name="name" type="text" placeholder="Nombre" required />
+          <label class="sr-only" for="email">Correo electrónico</label>
+          <input id="email" name="email" type="email" placeholder="Correo electrónico" required />
+          <button class="btn btn-primary" type="submit">Suscribirse</button>
+        </form>
+      </section>
     </main>
-</body>
+
+    <footer class="site-footer">
+      <div class="container footer-inner">
+        <p>© 2026 Hollow Knight</p>
+
+        <div class="social-links" aria-label="Redes sociales">
+          <a href="https://x.com/TeamCherryGames" aria-label="X">X</a>
+          <a href="https://www.instagram.com/teamcherrygames/" aria-label="Instagram">Instagram</a>
+          <a href="https://www.youtube.com/@teamcherrygames" aria-label="YouTube">YouTube</a>
+        </div>
+      </div>
+    </footer>
+  </body>
 </html>
